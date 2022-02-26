@@ -4,7 +4,6 @@ import router from './router'
 // 引入Element组件和样式
 // 按需引入
 import {
-  loading,
   Button,
   Select,
   Form,
@@ -90,7 +89,6 @@ Vue.use(BreadcrumbItem)
 Vue.use(Card)
 Vue.use(Col)
 Vue.use(Row)
-Vue.use(loading)
 
 // // 消息提示 Element , 挂载到Vue的原型上
 Vue.prototype.$message = Message
