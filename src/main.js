@@ -17,6 +17,9 @@ import {
   Menu,
   Submenu,
   MenuItemGroup,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
   MenuItem,
   Breadcrumb,
   BreadcrumbItem,
@@ -89,6 +92,9 @@ Vue.use(BreadcrumbItem)
 Vue.use(Card)
 Vue.use(Col)
 Vue.use(Row)
+Vue.use(Dropdown)
+Vue.use(DropdownItem)
+Vue.use(DropdownMenu)
 
 // // 消息提示 Element , 挂载到Vue的原型上
 Vue.prototype.$message = Message
@@ -98,5 +104,9 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+  beforeCreate () { // 挂载全局事件总线要挂载在这个beforeCreate钩子
+    // 在Vue原型中绑定全局事件总线
+    Vue.prototype.$bus = this // 安装全局事件总线，$bus就是当前应用的vm
+  }
 }).$mount('#app')

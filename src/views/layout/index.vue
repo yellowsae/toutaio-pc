@@ -1,7 +1,7 @@
 <template>
   <el-container class="layout-container">
-    <el-aside class="aside" width="200px">
-      <Aside />
+    <el-aside class="aside" width="auto">
+      <Aside class="aside-menu" />
     </el-aside>
     <el-container>
       <el-header class="header">
@@ -38,10 +38,13 @@ export default {
 
 .aside {
   background-color: #d3dce6;
+  .aside-menu {
+    height: 100%;
+  }
 }
 
 .header {
-  background-color: #b3c0d1;
+  //background-color: #b3c0d1;
 }
 
 .main {
