@@ -11,6 +11,7 @@ import {
   FormItem,
   Container,
   Message,
+  Image,
   Header,
   Aside,
   Main,
@@ -51,8 +52,11 @@ import {
 import 'element-ui/lib/theme-chalk/index.css'
 // 导入全局样式文件
 import './style/index.less'
+// 引入 nprogress 样式文件
+import 'nprogress/nprogress.css'
 
 // 项目中使用 Element组件
+Vue.use(Image)
 Vue.use(TimelineItem)
 Vue.use(Timeline)
 Vue.use(Upload)

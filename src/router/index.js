@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+// 引入进度条包 nprogress
+import Nprogress from 'nprogress'
 // 使用路由懒加载
 const Login = () => import('@/views/login')
 const Home = () => import('@/views/home')
@@ -94,6 +96,10 @@ router.beforeEach((to, from, next) => {
   // 如果登录了，则允许通过
   // 允许通过
   // next()
+
+  // 开启顶部进度条
+  Nprogress.start()
+
   const user = JSON.parse(window.localStorage.getItem('user'))
 
   // 校验非登录的登录状态
@@ -110,4 +116,11 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
+// 在路由的全局后置钩子中，关闭进度条特效
+router.afterEach((to, from) => {
+  // 结束顶部的导航进度条
+  Nprogress.done()
+})
+
 export default router
