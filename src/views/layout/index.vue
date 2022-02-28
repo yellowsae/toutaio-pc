@@ -49,6 +49,6 @@ export default {
 
 .main {
   background-color: #e9eef3;
-  overflow: hidden;
+  //overflow: hidden;
 }
 </style>

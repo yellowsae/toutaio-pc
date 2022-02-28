@@ -29,6 +29,9 @@ import {
   Col,
   Table,
   TableColumn,
+  RadioGroup,
+  Radio,
+  DatePicker,
   Switch,
   Tooltip,
   Pagination,
@@ -56,6 +59,9 @@ import './style/index.less'
 import 'nprogress/nprogress.css'
 
 // 项目中使用 Element组件
+Vue.use(DatePicker)
+Vue.use(RadioGroup)
+Vue.use(Radio)
 Vue.use(Image)
 Vue.use(TimelineItem)
 Vue.use(Timeline)

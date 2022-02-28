@@ -26,7 +26,6 @@ const routes = [
   // layout 布局页面
   {
     path: '/',
-    name: 'layout',
     component: Layout,
     children: [
       // HOME路由
