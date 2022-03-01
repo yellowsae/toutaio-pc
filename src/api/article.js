@@ -35,3 +35,19 @@ export const deleteArticle = id => {
     url: `/mp/v1_0/articles/${id}`
   })
 }
+
+/**
+ * 发布文章
+ */
+//  draft 是否存为草稿（true 为草稿） 默认为false
+export const addArticle = (data, draft = false) => {
+  return request({
+    method: 'POST',
+    url: '/mp/v1_0/articles',
+    params: {
+      draft //  是否存为草稿（true 为草稿）
+    },
+    // 文章数据
+    data
+  })
+}
