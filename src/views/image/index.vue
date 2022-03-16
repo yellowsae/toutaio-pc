@@ -1,15 +1,32 @@
 <template>
-  <div>
-    /image
+  <div class="image-container">
+    <el-card class="box-card">
+      <div slot="header" class="clearfix">
+        <!-- 面包屑路径导航 -->
+        <el-breadcrumb separator-class="el-icon-arrow-right">
+          <el-breadcrumb-item to="/">首页</el-breadcrumb-item>
+          <el-breadcrumb-item>素材管理</el-breadcrumb-item>
+        </el-breadcrumb>
+        <!-- /面包屑路径导航 -->
+        <!-- <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button> -->
+      </div>
+      <!--  图片展示 组件   -->
+      <ImageList />
+    </el-card>
   </div>
 </template>
 
 <script>
+// 展示图片的组件
+import ImageList from './components/image-list'
 export default {
-  name: 'ImageIndex'
+  name: 'ImageIndex',
+  components: { ImageList },
+  data () {
+    return {
+    }
+  }
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped lang="less"></style>

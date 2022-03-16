@@ -24,6 +24,7 @@ import {
   MenuItem,
   Breadcrumb,
   BreadcrumbItem,
+  RadioButton,
   Card,
   Row,
   Col,
@@ -59,6 +60,7 @@ import './style/index.less'
 import 'nprogress/nprogress.css'
 
 // 项目中使用 Element组件
+Vue.use(RadioButton)
 Vue.use(DatePicker)
 Vue.use(RadioGroup)
 Vue.use(Radio)
