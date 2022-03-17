@@ -20,7 +20,7 @@
             1、作用到普通 HTML 标签上可以获取 DOM
             2、作用到组件上可以获取组件
            -->
-          <image-list
+          <ImageList
             :is-show-add="false"
             :is-show-action="false"
             is-show-selected
@@ -82,7 +82,7 @@ export default {
       // 防止用户选择同一个文件不触发 change 事件
       // this.$refs.file.value = ''
     },
-    onCoverConfirm () {
+    async onCoverConfirm () {
       // 如果 tab 是上传图片，并且 input-file 有选择的文件，才执行上传图片的操作
       if (this.activeName === 'second') {
         const file = this.$refs.file.files[0]
@@ -93,15 +93,14 @@ export default {
         // 执行上传文件的操作
         const fd = new FormData()
         fd.append('image', file)
-        uploadImage(fd).then(res => {
-          // 关闭弹出层
-          this.dialogVisible = false
-          // 展示上传的图片
-          // this.$refs['cover-image'].src = res.data.data.url
-          // 将图片地址发送给父组件
-          this.$emit('input', res.data.data.url)
-          // this.$emit('update-cover', res.data.data.url)
-        })
+        const { data } = await uploadImage(fd)
+        // 关闭弹出层
+        this.dialogVisible = false
+        // 展示上传的图片
+        // this.$refs['cover-image'].src = res.data.data.url
+        // 将图片地址发送给父组件
+        this.$emit('input', data.data.url)
+        // this.$emit('update-cover', res.data.data.url)
       } else if (this.activeName === 'first') {
         // 还有一种组件通信方式：父组件可以直接访问子组件中的数据
         const imageList = this.$refs['image-list']

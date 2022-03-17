@@ -110,7 +110,7 @@
       <el-upload
         class="upload-demo"
         drag
-        action="http://ttapi.research.itcast.cn/mp/v1_0/user/images"
+        action="http://toutiao-img.itheima.net/FkGoX3FR43Xmm9ReaXlBpvjuC-zp"
         :headers="uploadHeaders"
         name="image"
         multiple
@@ -217,6 +217,8 @@ export default {
     onUploadSuccess () {
       // 关闭对话框
       this.dialogUploadVisible = false
+      // 执行上传文件的操作
+      // 没写
       // 更新素材列表
       this.loadImages(this.page)
       this.$message({
