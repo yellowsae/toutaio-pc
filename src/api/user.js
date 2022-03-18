@@ -37,3 +37,14 @@ export const getUserInfo = () => {
     // }
   })
 }
+
+/**
+ * 编辑用户资料
+ */
+export const ChangeUserInfo = data => {
+  return request({
+    method: 'PATCH',
+    url: '/mp/v1_0/user/profile',
+    data
+  })
+}
