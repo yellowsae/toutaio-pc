@@ -18,6 +18,7 @@
 <script>
 import Aside from './components/aside'
 import Header from './components/header'
+
 export default {
   name: 'LayoutIndex',
   components: {
